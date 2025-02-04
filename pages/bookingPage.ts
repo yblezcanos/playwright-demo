@@ -59,13 +59,16 @@ export class BookingPage extends BasePage {
         await this.stateInput.fill(info.state);
         await this.zipCodeInput.fill(info.zipCode);
 
+        // define default value for optional fields
         await this.cardTypeSelect.selectOption(info.cardType || "Visa");
         // await this.selectOption(bookingsLocators.cardTypeSelect, info.cardType);
 
+        // define optional fields as valid values
         await this.cardNumberInput.fill(info.creditCardNumber!);
         await this.cardMonthInput.fill(info.creditCardMonth!);
         await this.cardYearInput.fill(info.creditCardYear!);
         await this.nameOnCardInput.fill(info.nameOnCard!);
+        await this.rememberMeCheckbox.check();
         await this.purchaseFlightButton.click();
     }
 

@@ -58,6 +58,7 @@ export class BookingPage extends BasePage {
         await this.cityInput.fill(info.city);
         await this.stateInput.fill(info.state);
         await this.zipCodeInput.fill(info.zipCode);
+
         await this.cardTypeSelect.selectOption(info.cardType || "Visa");
         // await this.selectOption(bookingsLocators.cardTypeSelect, info.cardType);
 
